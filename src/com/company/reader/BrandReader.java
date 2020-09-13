@@ -33,5 +33,4 @@ public class BrandReader {
 
         return brands;
     }
-
 }

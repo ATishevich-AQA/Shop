@@ -1,19 +1,18 @@
-package com.company.entity;
+package com.company.dto;
 
+public class FullInfoDto {
+    int id;
+    String name;
+    String weight;
+    int amount;
+    boolean refundable;
+    String category;
+    String brand;
+    String madeInCountry;
+    String orderDate;
 
-public class Goods {
-
-    private int id;
-    private String name;
-    private String weight;
-    private int amount;
-    private boolean refundable;
-    private String category;
-    private String brand;
-    private String orderDate;
-
-    public Goods(int id, String name, String weight, int amount, boolean refundable, String category, String brand,
-                 String orderDate) {
+    public FullInfoDto(int id, String name, String weight, int amount, boolean refundable, String category,
+                       String brand, String madeInCountry, String orderDate) {
         this.id = id;
         this.name = name;
         this.weight = weight;
@@ -22,8 +21,8 @@ public class Goods {
         this.category = category;
         this.brand = brand;
         this.orderDate = orderDate;
+        this.madeInCountry = madeInCountry;
     }
-
 
     public int getId() {
         return id;
@@ -89,17 +88,26 @@ public class Goods {
         this.orderDate = orderDate;
     }
 
+    public String getMadeInCountry() {
+        return madeInCountry;
+    }
+
+    public void setMadeInCountry(String madeInCountry) {
+        this.madeInCountry = madeInCountry;
+    }
+
     @Override
     public String toString() {
-        return "Goods{" +
-                "id='" + id + '\'' +
-                "name='" + name + '\'' +
+        return "FullInfoDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", weight='" + weight + '\'' +
                 ", amount=" + amount +
                 ", refundable=" + refundable +
                 ", category='" + category + '\'' +
                 ", brand='" + brand + '\'' +
-                ", orderDate=" + orderDate +
+                ", orderDate='" + orderDate + '\'' +
+                ", madeInCountry='" + madeInCountry + '\'' +
                 '}';
     }
 }

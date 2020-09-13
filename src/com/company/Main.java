@@ -2,7 +2,9 @@ package com.company;
 
 import com.company.db.BrandConnector;
 import com.company.db.CategoryConnector;
+import com.company.db.FullInfoConnector;
 import com.company.db.GoodsConnector;
+import com.company.dto.FullInfoDto;
 import com.company.entity.Brand;
 import com.company.entity.Category;
 import com.company.entity.Goods;
@@ -10,13 +12,17 @@ import com.company.reader.BrandReader;
 import com.company.reader.CategoryReader;
 import com.company.reader.GoodsReader;
 import com.company.reader.ReaderConstants;
+import com.company.writer.FullInfoWriter;
 
+import static com.company.reader.ReaderConstants.FULL_INFO_EXPORT_FILE;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, SQLException {
 
         BrandReader brandReader = new BrandReader(ReaderConstants.BRAND_IMPORT_FILE);
         List<Brand> brands = brandReader.readBrands();
@@ -56,5 +62,14 @@ public class Main {
                 e.printStackTrace();
             }
         }
+
+        List<FullInfoDto> dtos = FullInfoConnector.getAll();
+
+        System.out.println(dtos);
+
+        FullInfoWriter writer = new FullInfoWriter(FULL_INFO_EXPORT_FILE);
+        writer.writeAll(dtos);
+        GoodsReader goodsReaders = new GoodsReader(ReaderConstants.GOODS_IMPORT_FILE);
+        System.out.println(goodsReaders.readGoods());
     }
 }

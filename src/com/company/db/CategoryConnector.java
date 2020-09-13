@@ -15,7 +15,7 @@ public class CategoryConnector {
         try (
                 PreparedStatement statement = connection.prepareStatement(ADD)
         ) {
-            statement.setInt(1,category.getId());
+            statement.setInt(1, category.getId());
             statement.setString(2, category.getCategory());
 
             statement.executeUpdate();
