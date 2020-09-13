@@ -1,4 +1,5 @@
-BrandName;MadeInCountry;
-Nike;Japan;
-Belvest;China;
-Addidas;China;
+id;brand_name;made_in_country;
+1;Nike;Japan;
+2;Belvest;China;
+3;Addidas;NY;
+4;Savage;GB;

@@ -8,8 +8,9 @@ public class CategoryUtil {
     public static Category toObject(String line) {
         String[] categoryfields = line.split(CSV_DELIMITER);
 
-        String category = categoryfields[0];
+        int id = Integer.parseInt(categoryfields[0]);
+        String category = categoryfields[1];
 
-        return new Category(category);
+        return new Category(id,category);
     }
 }

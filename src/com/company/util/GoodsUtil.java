@@ -11,14 +11,15 @@ public class GoodsUtil {
     public static Goods toObject(String line) throws ParseException {
         String[] goodsFields = line.split(CSV_DELIMITER);
 
-        String name = goodsFields[0];
-        String weight = goodsFields[1];
-        int amount = Integer.parseInt(goodsFields[2]);
-        boolean refundable = Boolean.parseBoolean(goodsFields[3]);
-        String category = goodsFields[4];
-        String brand = goodsFields[5];
-        String orderDate = goodsFields[6];
+        int id = Integer.parseInt(goodsFields[0]);
+        String name = goodsFields[1];
+        String weight = goodsFields[2];
+        int amount = Integer.parseInt(goodsFields[3]);
+        boolean refundable = Boolean.parseBoolean(goodsFields[4]);
+        String category = goodsFields[5];
+        String brand = goodsFields[6];
+        String orderDate = goodsFields[7];
 
-        return new Goods(name, weight, amount, refundable, category, brand, orderDate);
+        return new Goods(id, name, weight, amount, refundable, category, brand, orderDate);
     }
 }

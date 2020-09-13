@@ -8,7 +8,8 @@ import java.sql.SQLException;
 
 public class GoodsConnector {
 
-    private static final String ADD = "INSERT INTO goods (name, weight, amount, refundable, category,brand,orderDate) VALUES(?,?,?,?,?,?,?)";
+    private static final String ADD = "INSERT INTO goods (id, name, weight, amount, refundable, category,brand," +
+            "order_date) VALUES(?,?,?,?,?,?,?,?)";
 
     public static void add(Goods goods) throws SQLException {
         Connection connection = CommonDbConnector.getConnection();
@@ -16,14 +17,14 @@ public class GoodsConnector {
         try (
                 PreparedStatement statement = connection.prepareStatement(ADD)
         ) {
-
-            statement.setString(1, goods.getName());
-            statement.setString(2, goods.getWeight());
-            statement.setInt(3, goods.getAmount());
-            statement.setBoolean(4, goods.isRefundable());
-            statement.setString(5, goods.getCategory());
-            statement.setString(6, goods.getBrand());
-            statement.setString(7, goods.getOrderDate());
+            statement.setInt(1, goods.getId());
+            statement.setString(2, goods.getName());
+            statement.setString(3, goods.getWeight());
+            statement.setInt(4, goods.getAmount());
+            statement.setBoolean(5, goods.isRefundable());
+            statement.setString(6, goods.getCategory());
+            statement.setString(7, goods.getBrand());
+            statement.setString(8, goods.getOrderDate());
 
             statement.executeUpdate();
         }

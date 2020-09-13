@@ -8,9 +8,9 @@ public class BrandUtil {
     public static Brand toObject(String line) {
         String[] brandFields = line.split(CSV_DELIMITER);
 
-        String brandName = brandFields[0];
-        String madeInCountry = brandFields[1];
-
-        return new Brand(brandName, madeInCountry);
+        int id = Integer.parseInt(brandFields[0]);
+        String brandName = brandFields[1];
+        String madeInCountry = brandFields[2];
+        return new Brand(id, brandName, madeInCountry);
     }
 }

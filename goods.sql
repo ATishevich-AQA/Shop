@@ -1,9 +1,11 @@
 CREATE TABLE shop.goods (
-  name VARCHAR(55) NOT NULL,
-  weight VARCHAR(45) NOT NULL,
-  amount INT NOT NULL,
-  refundable BIT NOT NULL,
-  category VARCHAR(45) NOT NULL,
-  brand VARCHAR(45) NOT NULL,
-  orderDate DATE NOT NULL,
-  PRIMARY KEY (category));
+  id INT ,
+  name VARCHAR(55) ,
+  weight VARCHAR(45) ,
+  amount INT ,
+  refundable BIT ,
+  category VARCHAR(45) ,
+  brand VARCHAR(45) ,
+  order_date VARCHAR(45) NOT NULL,
+  FOREIGN KEY (brand)  REFERENCES brand (brand_name),
+  FOREIGN KEY (category)  REFERENCES category (category));

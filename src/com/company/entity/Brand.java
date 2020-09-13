@@ -2,14 +2,23 @@ package com.company.entity;
 
 public class Brand {
 
+    private int id;
     private String brand;
     private String madeInCountry;
 
-    public Brand(String brand, String madeInCountry) {
+    public Brand(int id, String brand, String madeInCountry) {
+        this.id = id;
         this.brand = brand;
         this.madeInCountry = madeInCountry;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getBrand() {
         return brand;
     }
@@ -29,6 +38,7 @@ public class Brand {
     @Override
     public String toString() {
         return "Brand{" +
+                "id='" + id + '\'' +
                 "brand='" + brand + '\'' +
                 ", madeInCountry='" + madeInCountry + '\'' +
                 '}';

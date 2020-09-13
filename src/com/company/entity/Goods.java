@@ -1,10 +1,9 @@
 package com.company.entity;
 
 
-import java.util.Date;
-
 public class Goods {
 
+    private int id;
     private String name;
     private String weight;
     private int amount;
@@ -13,8 +12,9 @@ public class Goods {
     private String brand;
     private String orderDate;
 
-
-    public Goods(String name, String weight, int amount, boolean refundable, String category, String brand, String orderDate) {
+    public Goods(int id, String name, String weight, int amount, boolean refundable, String category, String brand,
+                 String orderDate) {
+        this.id = id;
         this.name = name;
         this.weight = weight;
         this.amount = amount;
@@ -22,6 +22,15 @@ public class Goods {
         this.category = category;
         this.brand = brand;
         this.orderDate = orderDate;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -83,6 +92,7 @@ public class Goods {
     @Override
     public String toString() {
         return "Goods{" +
+                "id='" + id + '\'' +
                 "name='" + name + '\'' +
                 ", weight='" + weight + '\'' +
                 ", amount=" + amount +

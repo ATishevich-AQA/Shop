@@ -1,5 +1,5 @@
-name;weight;amount;refundable;categoty;brand;orderDate;
-sandaly from Belvest; 1;2;true;shoose;Belvest;Sep 21 2020;
-sneakers from Addidas; 2;4;true;scirts;Addidas;Aug 11 2020;
-sneakers from Nike; 2;5;false;shoose;Nike;Oct 01 2020;
-brand Tshirt; 1;3;false;tshorts;Nike;Jun 05 2020;
+id;name;weight;amount;refundable;category;brand;order_date;
+1;sandaly from Belvest; 1;2;true;shoose;Belvest;Sep 21 2020;
+2;sneakers from Addidas; 2;4;true;scirts;Addidas;Aug 11 2020;
+3;sneakers from Nike; 2;5;false;shoose;Nike;Oct 01 2020;
+4;sandaly from Belvest; 1;2;false;shoose;Belvest;Sep 22 2020;

@@ -17,6 +17,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+
         BrandReader brandReader = new BrandReader(ReaderConstants.BRAND_IMPORT_FILE);
         List<Brand> brands = brandReader.readBrands();
 
@@ -29,6 +30,20 @@ public class Main {
                 e.printStackTrace();
             }
         }
+
+        CategoryReader categoryReader = new CategoryReader(ReaderConstants.CATEGORY_IMPORT_FILE);
+        List<Category> categories = categoryReader.readCategory();
+
+        System.out.println(categoryReader.readCategory());
+
+        for (Category category : categories) {
+            try {
+                CategoryConnector.add(category);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
         GoodsReader goodsReader = new GoodsReader(ReaderConstants.GOODS_IMPORT_FILE);
         List<Goods> good = goodsReader.readGoods();
 
@@ -41,19 +56,5 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
-
-        CategoryReader categoryReader = new CategoryReader(ReaderConstants.CATEGORY_IMPORT_FILE);
-        List<Category> categories = categoryReader.readCategory();
-
-        System.out.println(categories);
-
-        for (Category category : categories) {
-            try {
-                CategoryConnector.add(category);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-   }
+    }
 }

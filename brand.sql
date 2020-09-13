@@ -1,4 +1,4 @@
 CREATE TABLE shop.brand (
-  BrandName VARCHAR(55) NOT NULL,
-  MadeInCountry VARCHAR(45) NULL,
-  PRIMARY KEY (BrandName));
+  id INT NOT NULL,
+  brand_name VARCHAR(55) PRIMARY KEY,
+  made_in_country VARCHAR(45));
