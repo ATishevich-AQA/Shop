@@ -13,7 +13,7 @@ import java.util.List;
 public class FullInfoConnector {
     private static final String SELECT_ALL = "SELECT goods.id,goods.name,goods.weight, goods.amount, " +
             "goods.refundable, goods.category, goods.brand, brand.made_in_country, goods.order_date " +
-            "FROM shop.goods LEFT JOIN shop.brand ON shop.goods.brand = shop.brand.brand_name;";
+            "FROM shop.goods LEFT JOIN shop.brand ON shop.goods.id = shop.brand.id;";
 
     public static List<FullInfoDto> getAll() throws SQLException {
         List<FullInfoDto> result = new ArrayList<>();

@@ -7,5 +7,5 @@ CREATE TABLE shop.goods (
   category VARCHAR(45) ,
   brand VARCHAR(45) ,
   order_date VARCHAR(45) NOT NULL,
-  FOREIGN KEY (brand)  REFERENCES brand (brand_name),
-  FOREIGN KEY (category)  REFERENCES category (category));
+  FOREIGN KEY (id)  REFERENCES brand (id),
+  FOREIGN KEY (id)  REFERENCES category (id));
